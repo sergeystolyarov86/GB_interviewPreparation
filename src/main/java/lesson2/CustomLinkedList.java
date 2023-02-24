@@ -38,7 +38,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
 
     @Override
     public void add(int index, T element) {
-        if (index > size) throw new IndexOutOfBoundsException();
+        if (index > size || index < 0 ) throw new IndexOutOfBoundsException();
         Node<T> current = head;
         while (current != null) {
             if (current.index == index) {
@@ -50,7 +50,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
 
     @Override
     public void delete(int index) {
-        if (index > size) throw new IndexOutOfBoundsException();
+        if (index > size && index < 0) throw new IndexOutOfBoundsException();
         Node<T> current = head;
         Node<T> newCurrent = null;
         int indexForChange = 0;
